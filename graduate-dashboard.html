@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate Dashboard | HatchBlu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center sticky top-0 z-10">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">H</div>
+            <span class="font-bold text-blue-900 uppercase text-sm tracking-tight">HatchBlu Portal</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-sm text-slate-500 hidden md:block">Welcome, <strong class="text-slate-900">Alex Graduate</strong></span>
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 border border-blue-200">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6">
+        
+        <header class="mb-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-900">Your Journey</h1>
+                    <p class="text-slate-500">Complete the modules below to become a Certified Audit Officer.</p>
+                </div>
+                <div class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 self-start">
+                    <span class="w-2 h-2 bg-blue-300 rounded-full animate-pulse"></span>
+                    Status: Registered & In Training
+                </div>
+            </div>
+
+            <div class="mt-8 relative">
+                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-slate-200">
+                    <div style="width:25%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
+                </div>
+                <div class="flex justify-between text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <div class="text-blue-600">Step 1: Payment <i class="fas fa-check-circle ml-1"></i></div>
+                    <div class="text-blue-600">Step 2: Assessment</div>
+                    <div>Step 3: Training</div>
+                    <div>Step 4: Certification</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 space-y-6">
+                
+                <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-8 rounded-2xl text-white shadow-xl shadow-blue-200">
+                    <div class="max-w-md">
+                        <h2 class="text-2xl font-bold mb-2">Start Initial Assessment</h2>
+                        <p class="text-blue-100 mb-6">Before unlocking training modules, we need to gauge your current baseline knowledge of aquaculture standards.</p>
+                        <a href="assessment-initial.html" class="inline-block bg-white text-blue-700 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition">
+                            Begin Assessment (15 Mins)
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Training Modules</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 opacity-60">
+                            <div class="flex justify-between items-start mb-4">
+                                <i class="fas fa-droplet text-blue-500 text-2xl"></i>
+                                <i class="fas fa-lock text-slate-400"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Water Quality Basics</h4>
+                            <p class="text-xs text-slate-500 mb-4">Master pH, Oxygen levels, and Nitrogen cycle management.</p>
+                            <span class="text-xs font-bold text-slate-400 uppercase">Locked</span>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 opacity-60">
+                            <div class="flex justify-between items-start mb-4">
+                                <i class="fas fa-wheat-awn text-orange-500 text-2xl"></i>
+                                <i class="fas fa-lock text-slate-400"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Feed Management</h4>
+                            <p class="text-xs text-slate-500 mb-4">Optimizing FCR and understanding nutrient density.</p>
+                            <span class="text-xs font-bold text-slate-400 uppercase">Locked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center text-slate-300 text-3xl mb-4">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-400">Officer Badge</h4>
+                    <p class="text-xs text-slate-400 mt-2 italic">Earned upon passing the final exam.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold mb-4 text-sm uppercase tracking-widest text-slate-500">Resource Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-600 text-sm hover:underline"><i class="fas fa-file-pdf mr-2"></i> Program Handbook</a></li>
+                        <li><a href="#" class="text-blue-600 text-sm hover:underline"><i class="fas fa-video mr-2"></i> Introduction Video</a></li>
+                        <li><a href="#" class="text-blue-600 text-sm hover:underline"><i class="fas fa-comments mr-2"></i> Graduate Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
