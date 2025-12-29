@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboard New Farmer | HatchBlu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-20">
+
+    <nav class="bg-white border-b border-slate-200 px-6 py-4 sticky top-0 z-10">
+        <div class="max-w-2xl mx-auto flex items-center justify-between">
+            <a href="graduate-dashboard.html" class="text-blue-600 font-semibold flex items-center gap-2">
+                <i class="fas fa-chevron-left"></i> Exit
+            </a>
+            <span class="font-bold text-slate-800">New Farmer Onboarding</span>
+            <div class="w-6"></div> </div>
+    </nav>
+
+    <main class="max-w-2xl mx-auto p-4 py-8">
+        
+        <div class="mb-8 flex items-center gap-2">
+            <div class="h-1 flex-1 bg-blue-600 rounded"></div>
+            <div class="h-1 flex-1 bg-slate-200 rounded"></div>
+            <div class="h-1 flex-1 bg-slate-200 rounded"></div>
+        </div>
+
+        <section class="space-y-6">
+            <header>
+                <h2 class="text-xl font-bold text-slate-900">Farmer Information</h2>
+                <p class="text-sm text-slate-500">Capture the basic details of the farm owner.</p>
+            </header>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div class="space-y-1">
+                    <label class="text-xs font-bold uppercase text-slate-400">Farmer Full Name</label>
+                    <input type="text" placeholder="e.g. Samuel Okoro" class="w-full p-4 bg-slate-50 border rounded-xl outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold uppercase text-slate-400">Phone Number</label>
+                        <input type="tel" placeholder="+234..." class="w-full p-4 bg-slate-50 border rounded-xl outline-none">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold uppercase text-slate-400">Village/Region</label>
+                        <input type="text" placeholder="Delta State" class="w-full p-4 bg-slate-50 border rounded-xl outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <header class="pt-4">
+                <h2 class="text-xl font-bold text-slate-900">Farm Specifications</h2>
+                <p class="text-sm text-slate-500">Details about the aquaculture environment.</p>
+            </header>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div class="space-y-1">
+                    <label class="text-xs font-bold uppercase text-slate-400">Primary Species</label>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <button class="p-4 border-2 border-blue-600 bg-blue-50 text-blue-700 rounded-xl font-bold flex flex-col items-center gap-2">
+                            <i class="fas fa-fish"></i> Tilapia
+                        </button>
+                        <button class="p-4 border border-slate-200 text-slate-600 rounded-xl font-bold flex flex-col items-center gap-2 hover:bg-slate-50">
+                            <i class="fas fa-shrimp"></i> Shrimp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold uppercase text-slate-400">Pond Count</label>
+                        <input type="number" placeholder="5" class="w-full p-4 bg-slate-50 border rounded-xl outline-none">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold uppercase text-slate-400">Total Pond Size (m²)</label>
+                        <input type="number" placeholder="2000" class="w-full p-4 bg-slate-50 border rounded-xl outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="showSuccess()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 active:scale-95 transition">
+                Create Farmer Profile
+            </button>
+        </section>
+    </main>
+
+    <div id="onboardingSuccess" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-8 hidden">
+        <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mb-6">
+            <i class="fas fa-check"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-2 text-center">Farmer Onboarded!</h2>
+        <p class="text-slate-500 text-center mb-10">Samuel Okoro's profile has been created. You can now start the first audit.</p>
+        
+        <div class="w-full space-y-3 flex flex-col items-center">
+            <button onclick="location.href='farmer-audit-tool.html'" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-2xl shadow-md hover:bg-blue-700 transition">Start First Audit</button>
+            <a href="graduate-dashboard.html" class="block w-full text-center py-4 text-slate-500 font-bold">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        function showSuccess() {
+            document.getElementById('onboardingSuccess').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

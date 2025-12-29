@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Water Quality | HatchBlu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <nav class="bg-slate-900 text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <a href="graduate-dashboard.html" class="text-sm text-slate-400 hover:text-white"><i class="fas fa-chevron-left mr-2"></i> Dashboard</a>
+        <span class="font-bold text-sm">Module 1: Water Quality Management</span>
+        <div class="text-[10px] bg-blue-600 px-2 py-1 rounded">25% Complete</div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row">
+        <main class="flex-grow p-6 lg:p-12">
+            <div class="aspect-video bg-slate-100 rounded-3xl mb-8 flex items-center justify-center border-2 border-dashed border-slate-200">
+                <div class="text-center">
+                    <i class="fas fa-play-circle text-6xl text-blue-600 mb-4 cursor-pointer"></i>
+                    <p class="text-slate-500 font-medium">Instructional Video: Testing pH and DO</p>
+                </div>
+            </div>
+            
+            <article class="prose max-w-none">
+                <h2 class="text-3xl font-bold mb-4">The Nitrogen Cycle in Ponds</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">Understanding how ammonia converts to nitrites and nitrates is crucial for maintaining fish health. In high-density Tilapia ponds, this balance can shift in hours...</p>
+                <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600 mb-6">
+                    <h4 class="font-bold text-blue-900 mb-2">Key Metric</h4>
+                    <p class="text-sm text-blue-800">Dissolved Oxygen (DO) should never drop below 3.0 mg/L during the night cycle.</p>
+                </div>
+            </article>
+
+            <div class="mt-12 pt-8 border-t flex justify-between">
+                <button class="text-slate-400 font-bold uppercase text-xs tracking-widest">Previous</button>
+                <button onclick="window.location.href='graduate-dashboard.html'" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg">Complete & Continue</button>
+            </div>
+        </main>
+
+        <aside class="w-full lg:w-80 bg-slate-50 p-6 border-l h-screen sticky top-16 hidden lg:block">
+            <h3 class="font-bold text-slate-900 mb-6">Course Content</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-3 text-blue-600 font-bold text-sm">
+                    <i class="fas fa-check-circle"></i> 1.1 Introduction
+                </div>
+                <div class="flex items-center gap-3 text-blue-600 font-bold text-sm">
+                    <i class="fas fa-play-circle"></i> 1.2 Water Metrics
+                </div>
+                <div class="flex items-center gap-3 text-slate-400 text-sm">
+                    <i class="fas fa-circle"></i> 1.3 Testing Equipment
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

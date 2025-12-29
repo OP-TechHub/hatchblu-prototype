@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | HatchBlu Aggregator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex">
+
+    <aside class="w-64 bg-slate-900 text-slate-300 hidden lg:flex flex-col sticky top-0 h-screen">
+        <div class="p-6 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">H</div>
+                <span class="font-bold text-white uppercase text-sm tracking-tight">HatchBlu Admin</span>
+            </div>
+        </div>
+        <nav class="flex-grow p-4 space-y-2">
+            <a href="admin-dashboard.html" class="flex items-center gap-3 p-3 bg-blue-600 text-white rounded-lg font-semibold transition">
+                <i class="fas fa-chart-pie"></i> Overview
+            </a>
+            <a href="admin-graduate.html" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-lg transition">
+                <i class="fas fa-graduation-cap"></i> Graduates
+            </a>
+            <a href="admin-farmers.html" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-lg transition">
+                <i class="fas fa-fish"></i> Farmers
+            </a>
+            <a href="admin-payments.html" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-lg transition">
+                <i class="fas fa-file-invoice-dollar"></i> Payments
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-800">
+            <a href="signin.html" class="flex items-center gap-3 p-3 hover:text-white transition">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-grow p-6 md:p-10">
+        
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900">Platform Overview</h1>
+                <p class="text-slate-500">Real-time monitoring of graduates and farm performance.</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="bg-white border border-slate-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition">Export CSV</button>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition">+ New Admin</button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Total Graduates</div>
+                <div class="text-3xl font-bold text-slate-900">128</div>
+                <div class="text-green-500 text-xs mt-2 font-bold"><i class="fas fa-arrow-up"></i> 12% increase</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Certified Officers</div>
+                <div class="text-3xl font-bold text-blue-600">84</div>
+                <div class="text-slate-400 text-xs mt-2 italic">65% certification rate</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Farmers Onboarded</div>
+                <div class="text-3xl font-bold text-slate-900">412</div>
+                <div class="text-green-500 text-xs mt-2 font-bold"><i class="fas fa-arrow-up"></i> 24 new this week</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Total Revenue</div>
+                <div class="text-3xl font-bold text-slate-900">$12,672</div>
+                <div class="text-slate-400 text-xs mt-2 italic">From $99 graduate fees</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <h3 class="font-bold text-slate-900 text-lg">Recent Graduate Registrations</h3>
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <input type="text" placeholder="Search graduates..." class="pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none w-64 transition">
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-widest border-b border-slate-100">
+                            <th class="px-6 py-4">Name</th>
+                            <th class="px-6 py-4">University</th>
+                            <th class="px-6 py-4">Status</th>
+                            <th class="px-6 py-4">Payment</th>
+                            <th class="px-6 py-4 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr>
+                            <td class="px-6 py-4 font-semibold text-slate-900">Alex Graduate</td>
+                            <td class="px-6 py-4 text-slate-600">State Fisheries Univ.</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-bold">Certified</span>
+                            </td>
+                            <td class="px-6 py-4 text-slate-600">Paid ($99)</td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-blue-600 hover:text-blue-800 font-bold">View Profile</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-semibold text-slate-900">Sarah Jenkins</td>
+                            <td class="px-6 py-4 text-slate-600">Ocean Academy</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-[10px] font-bold">In Training</span>
+                            </td>
+                            <td class="px-6 py-4 text-slate-600">Paid ($99)</td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-blue-600 hover:text-blue-800 font-bold">View Profile</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-semibold text-slate-900">Oluwa Chima</td>
+                            <td class="px-6 py-4 text-slate-600">Lagos Tech</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-[10px] font-bold">Awaiting Fee</span>
+                            </td>
+                            <td class="px-6 py-4 text-slate-400">Pending</td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-blue-600 hover:text-blue-800 font-bold">View Profile</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HatchBlu Aggregator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .toggle-active { background-color: white; color: #2563eb; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+    <nav class="p-6">
+        <a href="index.html" class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">H</div>
+            <span class="font-bold text-blue-900 uppercase text-sm tracking-tight">HatchBlu</span>
+        </a>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="max-w-md w-full">
+            <div class="bg-white p-10 rounded-3xl shadow-xl border border-slate-100">
+                
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-slate-900" id="loginTitle">Graduate Login</h1>
+                    <p class="text-slate-500 mt-2" id="loginSubtitle">Access your training and field tools</p>
+                </div>
+
+                <div class="flex bg-slate-100 p-1 rounded-xl mb-8">
+                    <button id="gradToggle" onclick="setRole('graduate')" class="flex-1 py-2 text-sm font-bold rounded-lg toggle-active transition-all">Graduate</button>
+                    <button id="adminToggle" onclick="setRole('admin')" class="flex-1 py-2 text-sm font-bold text-slate-500 hover:text-slate-700 transition-all">Admin</button>
+                </div>
+
+                <form class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Work Email</label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="email" placeholder="admin@hatchblu.com" 
+                                class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Password</label>
+                        <div class="relative">
+                            <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="password" placeholder="••••••••" 
+                                class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+
+                    <button type="button" id="submitBtn" onclick="handleLogin()" 
+                        class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-blue-700 transition active:scale-95">
+                        Sign In as Graduate
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentRole = 'graduate';
+
+        function setRole(role) {
+            currentRole = role;
+            const gradBtn = document.getElementById('gradToggle');
+            const adminBtn = document.getElementById('adminToggle');
+            const submitBtn = document.getElementById('submitBtn');
+            const title = document.getElementById('loginTitle');
+            const subtitle = document.getElementById('loginSubtitle');
+
+            if (role === 'admin') {
+                adminBtn.classList.add('toggle-active', 'bg-white', 'text-blue-600');
+                adminBtn.classList.remove('text-slate-500');
+                gradBtn.classList.remove('toggle-active', 'bg-white', 'text-blue-600');
+                gradBtn.classList.add('text-slate-500');
+                
+                title.innerText = "Admin Portal";
+                subtitle.innerText = "Manage graduates and farmer data";
+                submitBtn.innerText = "Sign In as Admin";
+                submitBtn.classList.replace('bg-blue-600', 'bg-slate-900');
+            } else {
+                gradBtn.classList.add('toggle-active', 'bg-white', 'text-blue-600');
+                gradBtn.classList.remove('text-slate-500');
+                adminBtn.classList.remove('toggle-active', 'bg-white', 'text-blue-600');
+                adminBtn.classList.add('text-slate-500');
+
+                title.innerText = "Graduate Login";
+                subtitle.innerText = "Access your training and field tools";
+                submitBtn.innerText = "Sign In as Graduate";
+                submitBtn.classList.replace('bg-slate-900', 'bg-blue-600');
+            }
+        }
+
+        function handleLogin() {
+            if (currentRole === 'admin') {
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                window.location.href = 'graduate-dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>
